@@ -1,0 +1,8 @@
+:host{
+	display: block;
+    background-image: url(../../../assets/404.jpg);
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

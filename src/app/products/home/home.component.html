@@ -1,0 +1,28 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<div class="header m-b-50" *ngIf="catTitle">
+			<h2>{{catTitle | titlecase}}</h2>
+		</div>
+		<div class="row">
+			<div class="col-12 col-sm-6 col-lg-4 m-b-60" *ngFor="let product of products; index as i">
+				<div class="card">
+				  <div class="card-body">
+				  	<div class="img-wrapper">
+				  		<img [src]="product.photoUrl[0]" class="card-img-top" [alt]="product.name">
+				  		<a [routerLink]="['', { outlets: { popup: ['product', product.id] } }]">
+				  			<fa-icon [icon]="search" [classes]="['searchIcon']"></fa-icon>
+				  		</a>
+				  	</div>
+				  	<a [routerLink]="'/single/'+product.id">
+				  		<h5 class="card-title">{{product.name}}</h5>
+				  	</a>
+					<div class="price_cart">
+						<h6 class="card-subtitle mb-2 text-muted">{{product.price | currency}}</h6>
+						<h6 class="card-subtitle mb-2 text-muted" (click)="addProduct(i, product.id)">Add To Cart</h6>
+					</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

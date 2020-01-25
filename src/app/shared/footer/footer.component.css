@@ -1,0 +1,29 @@
+footer {
+    background: #141414;
+    padding-top: 15px;
+    padding-bottom: 7px;
+}
+
+.copyright {
+    margin-bottom: 0;
+    color: #999;
+}
+
+footer .icon {
+    display: block;
+    color: #999;
+    display: inline-block;
+    font-size: 13px;
+}
+
+footer .social a {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+/*alert*/
+.alert:not(.not-fixed) {
+    position: fixed;
+    bottom: 15px;
+    right: 18px;
+}

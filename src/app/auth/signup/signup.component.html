@@ -1,0 +1,35 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<div class="form-wrapper">
+			<div [class.hide]="loader && !errors">
+				<h3>Signup</h3>
+				<form #f="ngForm" (ngSubmit)="validate(f)">
+
+					<input ngModel #name="ngModel" class="form-control m-b-20" type="text" name="name" placeholder="Full Name" required>
+					<div class="alert alert-danger not-fixed" *ngIf="name.invalid && name.touched">This Filed Requierd</div>
+
+					<input ngModel #email="ngModel" class="form-control m-b-20" type="email" name="email" placeholder="Email" required email>
+					<div class="alert alert-danger not-fixed" role="alert" *ngIf="email.errors?.required && email.touched">This Filed Requierd</div>
+					<div class="alert alert-danger not-fixed" role="alert" *ngIf="email.errors?.email && email.touched">Enter Valid Email</div>
+
+
+					<input ngModel #password="ngModel" class="form-control m-b-20" type="password" name="password" placeholder="Password" required minlength="6">
+					<div class="alert alert-danger not-fixed" *ngIf="password.errors?.required && password.touched">This Filed Requierd</div>
+					<div class="alert alert-danger not-fixed" *ngIf="password.errors?.minlength">Your password should be more than 6 characters</div>
+
+					<input ngModel #confPassword="ngModel" class="form-control m-b-20" type="password" name="confPassword" placeholder="Confirm Password" required>
+					<div class="alert alert-danger not-fixed" *ngIf="confPassword.value!=password.value && confPassword.touched">Passwords Don't Match</div>
+
+					<button class="btn btn-primary" [disabled]="f.invalid || password.value!=confPassword.value">Signup</button>
+					<p class="errors" *ngIf="errors">This email is already use</p>
+				</form>
+			</div>
+			<img src="/assets/loader.gif" *ngIf="loader && !created && !errors">
+			<div class="created" *ngIf="created">
+				<h2>Great!</h2>
+				<p>Your account has been created successfully</p>
+				<a class="btn btn-primary" routerLink="/">Start Exploring</a>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,13 @@
+<div class="allContent">
+	<app-nav></app-nav>
+	<div [@fadeInOut]="outlet.isActivated ? outlet.activatedRoute : ''" class="main">
+		<router-outlet #outlet="outlet"></router-outlet>
+	</div>
+
+	<div class="main">
+		<router-outlet name="popup" #popup="outlet"></router-outlet>
+	</div>
+
+	<app-footer></app-footer>
+</div>
+

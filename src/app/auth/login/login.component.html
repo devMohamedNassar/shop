@@ -1,0 +1,26 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<div class="alert alert-info mb-5 py-3 not-fixed">
+			<p class="mb-1 text-info"><strong>Email:</strong> demo@demo.com</p>
+			<p class="mb-0 text-info"><strong>Password:</strong> 123456</p>
+		</div>
+		<div class="form-wrapper">
+			<h3>Login</h3>
+			<form #f="ngForm" (ngSubmit)="validate(f)">
+
+				<input ngModel #email="ngModel" class="form-control m-b-20" type="email" name="email" placeholder="Email" required email>
+				<div class="alert alert-danger not-fixed" role="alert" *ngIf="email.errors?.required && email.touched">This Filed Requierd</div>
+				<div class="alert alert-danger not-fixed" role="alert" *ngIf="email.errors?.email && email.touched">Enter Valid Email</div>
+
+				<input ngModel #password="ngModel" class="form-control m-b-20" type="password" name="password" placeholder="Password" required>
+				<div class="alert alert-danger not-fixed" *ngIf="password.errors?.required && password.touched">This Filed Requierd</div>
+
+				<button class="btn btn-primary" [disabled]="f.invalid">Login</button>
+				<p class="errors" *ngIf="errors">Incorret email or password</p>
+			</form>
+			<div class="signup">
+				<h6>Don't have an account? <a routerLink="/signup">Create Account</a></h6>
+			</div>
+		</div>
+	</div>
+</section>

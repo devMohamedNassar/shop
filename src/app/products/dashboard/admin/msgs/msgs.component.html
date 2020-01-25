@@ -1,0 +1,31 @@
+<div class="alert alert-info not-fixed mb-4" *ngIf="msgs && !msgs.length">No Messages</div>
+<table class="table" *ngIf="msgs && msgs.length != 0">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Sender</th>
+      <th scope="col">Message</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let msgg of msgs; index as i">
+      <th>{{i + 1}}</th>
+      <td>
+        <span>{{msgg.name}}</span>
+      </td>
+      <td>
+        <p>{{msgg.sender}}</p>
+      </td>
+      <td>
+        <p>{{msgg.msg}}</p>
+      </td>
+      <td>
+        <div>
+          <button class="btn btn-danger" (click)="remove(msgg.id)">Remove</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

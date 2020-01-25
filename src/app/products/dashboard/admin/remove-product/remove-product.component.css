@@ -1,0 +1,21 @@
+.table img {
+	height: auto;
+	width: 3rem;
+}
+
+.table td, .table th{
+	vertical-align: middle;
+	position: relative;
+}
+
+/*.table td > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 90%;
+    display: contents;
+}*/
+
+.table .btn {
+    min-width: 92px;
+}

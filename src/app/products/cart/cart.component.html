@@ -1,0 +1,50 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<div class="row" *ngIf="Products.length!=0">
+			<div class="col-lg-8">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Name</th>
+				      <th scope="col">Price</th>
+				      <th scope="col">Options</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr *ngFor="let Product of Products; index as i" [@Fade]>
+				      <th><img [src]="Product.photoUrl[0]"></th>
+				      <td>{{Product.name}}</td>
+				      <td>{{Product.price | currency}}</td>
+				      <td><button class="btn btn-danger" (click)="deletFromCart(i)">Delete</button></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+			<div class="col-lg-4 mt-4 mt-lg-0">
+				<div class="cartCard">
+					<h6>Order Summary</h6>
+					<hr>
+					<div class="cartCard-products">
+						<ul class="list-unstyled">
+							<li *ngFor="let Product of Products; let i = index" class="clearfix text-secondary">{{Product.name}}
+								<div class="quantity float-right">
+									<span (click)="minus(q, i)">-</span>
+									<input type="text" class="form-control" #q [value]="Product.quantity || 1" (input)="addQuantity(i, $event)">
+									<span (click)="plus(q, i)">+</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<hr>
+					<h6 class="clearfix text-muted">Total <span class="float-right text-muted">{{total | currency}}</span></h6>
+					<hr class="mb-4">
+					<button routerLink="/check-out" class="btn btn-primary btn-block mt-3">Proceed To Checkout</button>
+				</div>
+			</div>
+		</div>
+
+		
+		<h3 *ngIf="Products.length==0">Shopping Cart is Empty</h3>
+	</div>
+</section>

@@ -1,0 +1,29 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="images">
+							<div class="thumbnails">
+								<img *ngFor="let photo of product.photoUrl; index as i" [src]="photo || ''" alt="" (click)="slide(i, $event)" [class]="i==0 ? 'active' : ''">
+							</div>
+							<div class="wrapper">
+								<img *ngFor="let photo of product.photoUrl; index as i" [attr.data-slide]="i" [src]="photo || ''" alt="" [class.active]="i==0">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mt-5 mt-md-0">
+						<h2>{{product.name}}</h2>
+						<p class="price">{{product.price | currency}}<fa-icon [icon]="faTimes" [classes]="['cartIcon']"></fa-icon><input #qu class="form-control" type="number" min="1" name="quantity" [value]="quantity || 1" (click)="onAddQuantity(qu.value)"></p>
+						<p>{{product.desc}}</p>
+						<div class="m-t-35">
+							<button class="btn btn-primary" (click)="onAdd(qu.value)">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

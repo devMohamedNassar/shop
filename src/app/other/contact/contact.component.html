@@ -1,0 +1,27 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<div class="row">
+			<div class="offset-md-2"></div>
+			<div class="col-md-8">   
+				<h2>Drop us a line</h2>
+				<p>we are here for you! how can we help?</p>
+				<form #f="ngForm" (ngSubmit)="contactForm(f)" class="m-t-50">
+					
+					<input #name="ngModel" ngModel class="form-control m-b-20" placeholder="Name" type="text" name="name" required>
+					<p class="alert alert-danger not-fixed" *ngIf="name.errors?.required && name.touched">Name is required</p>
+
+					<input #email="ngModel" ngModel class="form-control m-b-20" placeholder="Email" type="email" name="email" email required>
+					<p class="alert alert-danger not-fixed" *ngIf="email.errors?.required && email.touched">Email is required</p>
+					<p class="alert alert-danger not-fixed" *ngIf="email.errors?.email && email.touched">Enter a valid email</p>
+
+					<textarea #msg="ngModel" ngModel class="form-control m-b-20" placeholder="Message" name="msg" rows="10" required></textarea>
+					<p class="alert alert-danger not-fixed" *ngIf="msg.errors?.required && msg.touched">Message is required</p>
+
+					<button class="btn btn-primary" [disabled]="f.invalid || msgSent">Send</button>
+
+				</form>
+				
+			</div>
+		</div>
+	</div>
+</section>

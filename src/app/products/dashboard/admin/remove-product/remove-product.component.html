@@ -1,0 +1,31 @@
+<div class="alert alert-info not-fixed mb-4">You can't edit or remove any default item please try add new one then you can edit or remove it</div>
+<table class="table" *ngIf="Products.length!=0">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Product of Products; index as i">
+      <th><img [src]="Product.photoUrl"></th>
+      <td>
+        <span *ngIf="editMode != Product.id">{{Product.name}}</span>
+        <input type="text" name="name" *ngIf="editMode == Product.id" [(ngModel)]="Product.name" class="form-control" [disabled]="inputDis">
+      </td>
+      <td>
+        <span *ngIf="editMode != Product.id">{{Product.price | currency}}</span>
+        <input type="number" name="price" *ngIf="editMode == Product.id" [(ngModel)]="Product.price" class="form-control" [disabled]="inputDis">
+      </td>
+      <td>
+        <div *ngIf="editMode != Product.id">
+          <button class="btn btn-warning mr-1 my-1" (click)="edit(Product.id, Product)">Edit</button>
+          <button class="btn btn-danger my-1" (click)="remove(Product.id)">Remove</button>
+        </div>
+        <button class="btn btn-primary" (click)="save(Product)" *ngIf="editMode == Product.id" [disabled]="saveMode">Save</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,35 @@
+<section class="p-t-b-120">
+	<div class="container">
+		<form (ngSubmit)="onSubmit()" [formGroup]="checkOutForm">
+			<div class="row">
+				<div class="col-md-6">
+
+					<label for="name" class="text-secondary">Full Name</label>
+					<div class="row">
+						<div class="col-md-6">
+							<input id="name" type="text" placeholder="First Name" class="form-control" formControlName="fname">
+							<div class="alert alert-danger not-fixed mb-0 mt-2" *ngIf="f.fname.invalid && f.fname.touched">this filed is required</div>
+						</div>
+						<div class="col-md-6 mt-3 mt-md-0">
+							<input type="text" placeholder="Last Name" class="form-control" formControlName="lname">
+							<div class="alert alert-danger not-fixed mb-0 mt-2" *ngIf="f.lname.invalid && f.lname.touched">this filed is required</div>
+						</div>
+					</div>
+
+					<label for="address" class="text-secondary mt-4">Address</label>
+					<input id="address" type="text" placeholder="Line 1" class="form-control" formControlName="address1">
+					<div class="alert alert-danger not-fixed mb-0 mt-2" *ngIf="f.address1.invalid && f.address1.touched">this filed is required</div>
+					
+					<input type="text" placeholder="Line 2" class="form-control mt-3" formControlName="address2">
+
+				</div>
+
+				<div class="col-md-6 mt-4 mt-md-0">
+					<label for="notes" class="text-secondary">Order Notes</label>
+					<textarea id="notes" class="form-control" placeholder="Notes about your order" rows="9" formControlName="orderNotes"></textarea>
+				</div>
+			</div>
+			<button class="btn btn-primary mt-4" [disabled]="checkOutForm.invalid || loading"><div *ngIf="loading" class="spinner-border spinner-border-sm mr-2 mb-1"></div>Place Order</button>
+		</form>
+	</div>
+</section>

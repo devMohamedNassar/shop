@@ -1,0 +1,97 @@
+.card {
+    border: none;
+    text-align: center;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-title {
+    margin-bottom: .7em;
+    margin-top: 1.5em;
+}
+
+.price_cart {
+    overflow: hidden;
+    height: 15px;
+}
+
+.card a {
+    color: var(--dark)
+}
+
+.card a:hover {
+    color: var(--gray-dark);
+}
+
+.price_cart h6 {
+	margin-top: 0;
+	transition: all 0.3s;
+}
+
+.card:hover .price_cart h6:first-of-type {
+	margin-top: -30px
+}
+
+.price_cart h6:last-of-type {
+	cursor: pointer;
+}
+
+.loader {
+	position: relative;
+	height: 15px;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.img-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-wrapper:hover::after {
+    opacity: 1;
+}
+
+.loader img {
+	width: 85px;
+    margin-top: -15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+fa-icon {
+    font-size: 15px;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #000;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-wrapper:hover fa-icon {
+    transform: translate(-50%, -50%) scale(1);
+}
+

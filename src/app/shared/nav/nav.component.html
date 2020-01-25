@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+	<div class="container">
+	  <a class="navbar-brand" href="#"><img src="assets/logo.png"></a>
+	  <button (click)="iscollapse=!iscollapse" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="navbar-collapse" [@collapse]="iscollapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+	        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item" routerLinkActive="active">
+	        <a class="nav-link" routerLink="/category/mens">Mens</a>
+	      </li>
+	      <li class="nav-item" routerLinkActive="active">
+	        <a class="nav-link" routerLink="/category/womens">Womens</a>
+	      </li>
+	      <li class="nav-item" routerLinkActive="active">
+	        <a class="nav-link" routerLink="/about">About</a>
+	      </li>
+	      <li class="nav-item" routerLinkActive="active">
+	        <a class="nav-link" routerLink="/contact">Contact</a>
+	      </li>
+
+	      <li class="nav-item" *ngIf="isAdmin" routerLinkActive="active">
+	        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+	      </li>
+	    </ul>
+	    
+		<div class="cartWrapper" routerLink="/cart" *ngIf="cartProducts.length!=0">
+			<fa-icon [icon]="faShoppingCart" [classes]="['cartIcon']"></fa-icon>
+			<span class="badge badge-danger">{{cartProducts.length}}</span>
+		</div>
+		<a class="btn btn-danger" routerLink="/login" *ngIf="!isUser">Login</a>
+		<button class="btn btn-danger" (click)="logout()" *ngIf="isUser">Logout</button>
+	  </div>
+	</div>
+</nav>

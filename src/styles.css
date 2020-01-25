@@ -1,0 +1,117 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	overflow: hidden;
+}
+
+p {
+	font-size: 14px;
+	color: #989898;
+}
+
+img {
+	max-width: 100%;
+}
+
+.full-width {
+	display: block;
+	width: 100%;
+}
+
+.searchIcon {
+	height: 100%;
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.p-t-b-120 {
+	padding: 120px 0;
+}
+
+.m-t-b-50 {
+	margin: 60px 0;
+}
+
+.m-t-50 {
+	margin-top: 50px;
+}
+
+.m-t-35 {
+	margin-top: 35px;
+}
+
+.m-t-30 {
+	margin-top: 30px;
+}
+
+.m-t-20 {
+	margin-top: 20px;
+}
+
+.m-b-50 {
+	margin-bottom: 50px;
+}
+
+.m-b-60 {
+	margin-bottom: 60px;
+}
+
+.m-b-30 {
+	margin-bottom: 30px;
+}
+
+.m-b-20 {
+	margin-bottom: 20px;
+}
+
+.m-b-15 {
+	margin-bottom: 15px;
+}
+
+/*bootstrap*/
+.form-control {
+    height: calc(1.5em + .75rem + 10px);
+    font-size: 0.9rem;
+}
+
+.alert {
+	font-size: 15px;
+}
+
+/*Root component*/
+app-root {
+	display: block;
+	overflow: auto;
+	height: 100vh;
+}
+
+.allContent {
+    position: relative;
+    padding-bottom: 54px;
+    min-height: 100vh;
+}
+
+/*Footer component*/
+app-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/*single*/
+.price .cartIcon {
+    font-size: 16px;
+    margin-right: 20px;
+    margin-left: 18px;
+    color: rgba(0, 0, 0, 0.17);
+}
+
+
+.main > *,
+.admin > * {
+	display: block;
+}
+

@@ -1,0 +1,10 @@
+<div class="product-popup">
+	<div class="wrapper">
+		<fa-icon [icon]="exitIcon" [classes]="['exitIcon']" (click)="exit()"></fa-icon>
+		<div class="content">
+			<img [src]="photo" alt="" class="full-width">
+			<h4 class="mt-4 mb-2">{{product.name}}</h4>
+			<p>{{product.desc}}</p>
+		</div>
+	</div>
+</div>

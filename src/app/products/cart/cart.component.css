@@ -1,0 +1,38 @@
+.table img {
+	height: auto;
+	width: 3rem;
+}
+
+.table td {
+    padding-top: 2rem;
+}
+
+.cartCard {
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+.cartCard-products > ul > li {
+	margin: 20px 0;
+}
+
+.quantity {
+    display: inline-block;
+    border: 1px solid #ced4da;
+    margin-top: -3px;
+}
+
+.quantity span {
+    padding: 0 13px;
+    cursor: pointer;
+}
+
+.quantity input {
+    width: 44px;
+    height: 26px;
+    display: inline;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    text-align: center;
+}

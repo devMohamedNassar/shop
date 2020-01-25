@@ -1,0 +1,25 @@
+.modal {
+	overflow: auto;
+}
+
+.modal .table thead th {
+	border-top: none;
+}
+
+.modal .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #eee;
+}
+
+.modal th img {
+	width: 35px;
+}
+
+.modal-header,
+.modal-footer {
+	background-color: #fafafa;
+}
+
+.table .btn {
+    min-width: 92px;
+}

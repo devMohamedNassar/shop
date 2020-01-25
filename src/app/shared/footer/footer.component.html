@@ -1,0 +1,23 @@
+<footer>
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-md-6 text-md-left m-xs-b-2 mb-2">
+				<p class="copyright">All rights reserved</p>
+			</div>
+			<div class="col-md-6 text-md-right social mb-2">
+				<a href="#">
+					<fa-icon [icon]="facebook" [classes]="['icon']"></fa-icon>
+				</a>
+				<a href="#">
+					<fa-icon [icon]="twitter" [classes]="['icon']"></fa-icon>
+				</a>
+				<a href="#">
+					<fa-icon [icon]="linkedin" [classes]="['icon']"></fa-icon>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+<div *ngIf="!alert.hide" class="alert alert-{{alert.type}}" role="alert" [@Fade]>
+ {{alert.msg}}
+</div>

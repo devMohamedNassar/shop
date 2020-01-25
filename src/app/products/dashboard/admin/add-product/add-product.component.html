@@ -1,0 +1,21 @@
+<div class="add">
+	<form #f="ngForm" (ngSubmit)="add(f)">
+		
+		<input #name="ngModel" ngModel type="text" name="name" placeholder="Name" class="form-control m-b-20" required>
+		
+		<input #price="ngModel" ngModel type="number" min="1" name="price" placeholder="Price" class="form-control m-b-20" required>
+
+		<input #cat="ngModel" ngModel type="text" name="cat" placeholder="Category" class="form-control m-b-20" required>
+		
+		<label for="imageUpload" class="btn btn-block btn-outline-primary m-b-20">Select Images</label>
+		<input id="imageUpload" accept="image/*" #file type="file" name="file" class="form-control" style="display: none" multiple (input)="checkFile()">
+		
+		<textarea #desc="ngModel" ngModel name="desc" placeholder="Description" class="form-control m-b-20" rows="10" required></textarea>
+		
+		<div class="btn_loader">
+			<input type="submit" value="Add Product" class="btn btn-primary" [disabled]="f.invalid || loading.loader || !selectFile">
+			<img src="assets/loader.gif" *ngIf="loading.loader">
+		</div>
+
+	</form>
+</div>
